@@ -1,12 +1,17 @@
 // @flow
 import * as React from 'react';
 import { Accordion, Button, Form, Modal } from 'react-bootstrap';
+import BaseService from '../services/baseService';
 type Props = {
-  payload: { name: string; key: number; questions: Array<any> };
+  payload: { tabName: string; key: number; questions: Array<any> };
 }
 type State = {
   questions: Array<any>;
-  show:boolean,
+  show: boolean,
+  resultPayload: {
+    scorePercentage: string,
+    description:string
+  }
 };
 export default class TabContent extends React.Component<Props, State> {
   constructor(props: any) {
@@ -17,6 +22,10 @@ export default class TabContent extends React.Component<Props, State> {
         return q;
       }),
       show: false,
+      resultPayload: {
+        scorePercentage: '0',
+        description:'response not found'
+      }
     };
   }
   componentDidMount() {
@@ -31,8 +40,33 @@ export default class TabContent extends React.Component<Props, State> {
     tempQuestions[index].selectedAnswer = '';
     this.setState({ questions: tempQuestions });
   }
-  submitResult() {
-   this.setState({show:true})    
+ async submitResult() {
+    const bs = new BaseService();
+    let baseEndpoint = 'http://localhost:3001';
+    switch (this.props.payload.key) {
+      case 1:
+        baseEndpoint = `${baseEndpoint}/cat-a-gov`;
+        break;
+        case 2:
+        
+        break;
+        case 3:
+        
+          break;
+    
+      default:
+        break;
+    }
+    const payload = this.state;
+   const  result = await bs.post(baseEndpoint, payload);
+   // check the result and bind the payload
+   this.setState({
+     resultPayload: {
+       scorePercentage: '10',
+       description:'demo response result is showing here'
+   }})
+   this.setState({ show: true });  
+   
   }
 
   handleShow(value:boolean) {
@@ -95,7 +129,8 @@ export default class TabContent extends React.Component<Props, State> {
           <Modal.Title>Result</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          
+              <h3>Scope Percentage: {this.state.resultPayload.scorePercentage}</h3>
+              <p>Analysis report: { this.state.resultPayload.description}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={(e)=>this.handleShow(false)}>
