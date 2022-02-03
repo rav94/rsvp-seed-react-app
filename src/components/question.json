@@ -1,0 +1,8 @@
+{
+  "data":[
+    { "name":"tab1","questions":[{"id":1,"question":"Do you use GDRP ?", "possibleAnswers":["Yes","No","N/A"]},{"id":2,"question":"Do you use HIPPA ?", "possibleAnswers":["Yes","No","N/A"]}]}
+,
+{ "name":"tab2","questions":[{"id":1,"question":"SSSSSSS ?", "possibleAnswers":["Yes","No","N/A"]},{"id":2,"question":"Do you use HIPPA ?", "possibleAnswers":["Yes","No","N/A"]}]}
+
+  ]
+}
