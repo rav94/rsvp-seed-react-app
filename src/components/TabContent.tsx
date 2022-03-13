@@ -10,7 +10,8 @@ type State = {
   show: boolean,
   resultPayload: {
     scorePercentage: string,
-    description:string
+    insight: string,
+    recommendation: string
   }
 };
 export default class TabContent extends React.Component<Props, State> {
@@ -24,7 +25,8 @@ export default class TabContent extends React.Component<Props, State> {
       show: false,
       resultPayload: {
         scorePercentage: '0',
-        description:'response not found'
+        insight: 'response not found',
+        recommendation: 'response not found'
       }
     };
   }
@@ -40,37 +42,64 @@ export default class TabContent extends React.Component<Props, State> {
     tempQuestions[index].selectedAnswer = '';
     this.setState({ questions: tempQuestions });
   }
- async submitResult() {
+  async submitResult() {
     const bs = new BaseService();
     let baseEndpoint = 'http://localhost:3001';
     switch (this.props.payload.key) {
       case 1:
         baseEndpoint = `${baseEndpoint}/cat-a-gov`;
         break;
-        case 2:
-        
+      case 2:
+        baseEndpoint = `${baseEndpoint}/cat-a-ops`;
         break;
-        case 3:
-        
-          break;
-    
+      case 3:
+        baseEndpoint = `${baseEndpoint}/cat-b-gov`;
+        break;
+      case 4:
+        baseEndpoint = `${baseEndpoint}/cat-b-ops`;
+        break;
+      case 5:
+        baseEndpoint = `${baseEndpoint}/cat-c-gov`;
+        break;
+      case 6:
+        baseEndpoint = `${baseEndpoint}/cat-c-ops`;
+        break;
+      case 7:
+        baseEndpoint = `${baseEndpoint}/cat-d-gov`;
+        break;
+      case 8:
+        baseEndpoint = `${baseEndpoint}/cat-d-ops`;
+        break;
       default:
         break;
     }
-    const payload = this.state;
-   const  result = await bs.post(baseEndpoint, payload);
-   // check the result and bind the payload
-   this.setState({
-     resultPayload: {
-       scorePercentage: '10',
-       description:'demo response result is showing here'
-   }})
-   this.setState({ show: true });  
-   
+    let formattedPaylod: any = {}
+    const payload = this.state.questions.forEach((q: any) => {
+      console.log({ q });
+
+      const { id, selectedAnswer } = q;
+      formattedPaylod[id] = selectedAnswer;
+
+
+    });
+
+    console.log(formattedPaylod)
+    const result = await bs.post(baseEndpoint, formattedPaylod);
+    console.log({ result })
+    // check the result and bind the payload
+    this.setState({
+      resultPayload: {
+        scorePercentage: result.score_percentage,
+        insight: result.insight,
+        recommendation: result.recommendation
+      }
+    })
+    this.setState({ show: true });
+
   }
 
-  handleShow(value:boolean) {
-    this.setState({show:value})
+  handleShow(value: boolean) {
+    this.setState({ show: value })
   }
   render() {
     return (
@@ -107,38 +136,39 @@ export default class TabContent extends React.Component<Props, State> {
                     )}
                   </Form>
                   <Button className='clear-btn' onClick={(e) => this.resetSelection(index)}>
-                      clear answer
-                    </Button>
+                    clear answer
+                  </Button>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
           );
         })}
         <div className='submit-view'>
-                  <Button onClick={(e) => this.submitResult()}>Submit Result</Button>
+          <Button onClick={(e) => this.submitResult()}>Submit Result</Button>
 
         </div>
         <>
-      <Modal
-        show={this.state.show}
-        onHide={()=>{this.handleShow(false)}}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Result</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-              <h3>Scope Percentage: {this.state.resultPayload.scorePercentage}</h3>
-              <p>Analysis report: { this.state.resultPayload.description}</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={(e)=>this.handleShow(false)}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+          <Modal
+            show={this.state.show}
+            onHide={() => { this.handleShow(false) }}
+            backdrop="static"
+            keyboard={false}
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Result</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>Insight: {this.state.resultPayload.insight}</p>
+              <p>Recommendation: {this.state.resultPayload.recommendation}</p>
+              <p>Scope Percentage: {this.state.resultPayload.scorePercentage}</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={(e) => this.handleShow(false)}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </>
       </>
     );
   }

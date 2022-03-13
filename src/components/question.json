@@ -1,8 +1,477 @@
 {
-  "data":[
-    { "name":"tab1","questions":[{"id":1,"question":"Do you use GDRP ?", "possibleAnswers":["Yes","No","N/A"]},{"id":2,"question":"Do you use HIPPA ?", "possibleAnswers":["Yes","No","N/A"]}]}
-,
-{ "name":"tab2","questions":[{"id":1,"question":"SSSSSSS ?", "possibleAnswers":["Yes","No","N/A"]},{"id":2,"question":"Do you use HIPPA ?", "possibleAnswers":["Yes","No","N/A"]}]}
-
+  "data": [
+    {
+      "name": "3.A - Assessing Identity and Access Management | Governance",
+      "questions": [
+        {
+          "id": "A3",
+          "question": "Do you have controls in place ensuring timely removal of systems access that is no longer required for business purposes?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "A4",
+          "question": "Do you manage and store the identity of all personnel who have access to the IT infrastructure, including their level of access?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "A7",
+          "question": "Do you document how you grant, approve and enforce access restrictions to tenant/customer credentials following the rules of least privilege?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.A - Assessing Identity and Access Management | Operations",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "Do you restrict, log, and monitor access to your information security management systems (e.g., hypervisors, firewalls, vulnerability scanners, network sniffers, APIs, etc.) including ones which are hosted within public cloud services you consume (e.g., AWS Security Hub, GCP The Cloud Security Command Center, AWS Security Center etc.)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "A2",
+          "question": "Do you monitor and log privileged access (e.g., administrator level) to information security management systems?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "A5",
+          "question": "Are controls in place to prevent unauthorized access to your application, program, or object source code, and assure it is restricted to authorized personnel only?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "A6",
+          "question": "Are controls in place to prevent unauthorized access to tenant application, program, or object source code, and assure it is restricted to authorized personnel only?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "A8",
+          "question": "Do you require a periodical authorization and validation (e.g. at least annually) of the entitlements for all system users and administrators (exclusive of users maintained by your tenants), based on the rule of least privilege, by business leadership or other accountable business role or function?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "A9",
+          "question": "Is timely deprovisioning, revocation, or modification of user access to the organizations systems, information assets, and data implemented upon any change in status of employees, contractors, customers, business partners, or involved third parties?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.B - Assessing Metastructure | Governance",
+      "questions": [
+        {
+          "id": "B3",
+          "question": "Upon termination of contract or business relationship, are employees and business partners adequately informed of their obligations for returning organizationally-owned assets?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B4",
+          "question": "In accordance to local laws, regulations, ethics, and contractual constraints, are all employment candidates, contractors, and involved third parties subject to background verification?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B5",
+          "question": "Do your employment agreements incorporate provisions and/or terms in adherence to established information governance and security policies?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B6",
+          "question": "Are documented policies, procedures, and guidelines in place to govern change in employment and/or termination?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B7",
+          "question": "Are personnel trained and provided with awareness programs at least once a year?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B8",
+          "question": "Do you allow tenants to view your third-party audit or certification reports?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "B11",
+          "question": "Do you have a program in place that includes the ability to monitor changes to the regulatory requirements in relevant jurisdictions, adjust your security program for changes to legal requirements, and ensure compliance with relevant regulatory requirements?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B13",
+          "question": "Are you aware of necessary points of contacts with your CSP for IR escalation and support?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B14",
+          "question": "Do you have a documented security incident response plan and test it regularly (at least annually)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B15",
+          "question": "Are workforce personnel and external business relationships adequately informed of their responsibility, and, if required, consent and/or contractually required to report all information security events in a timely manner?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B17",
+          "question": "Are business continuity plans subject to testing at planned intervals or upon significant organizational or environmental changes to ensure continuing effectiveness?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B21",
+          "question": "Do you have identified and enabled the information security baselines for every component of your cloud infrastructure and services?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B22",
+          "question": "Are your information security policies and procedures made available to all impacted personnel and business partners, authorized by accountable business role/function and supported by the information security management program as per industry best practices (e.g. ISO 27001, SOC 2)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B23",
+          "question": "Is a formal disciplinary or sanction policy established for employees who have violated security policies and procedures?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B24",
+          "question": "Do you notify your tenants when you make material changes to your information security and/or privacy policies?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B25",
+          "question": "Do you perform, at minimum, annual reviews to your privacy and security policies?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.B - Assessing Metastructure | Operations",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "Do you have a capability to allow creation of unique encryption keys per tenant?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "B2",
+          "question": "Do you encrypt tenant data at rest (on disk/storage) within your environment?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "B9",
+          "question": "Do you conduct network penetration tests of your cloud service infrastructure at least annually?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B10",
+          "question": "Do you conduct application penetration tests of your cloud infrastructure regularly as prescribed by industry best practices and guidance?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B12",
+          "question": "Do you have controls in place to restrict and monitor the installation of unauthorized software onto your systems?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B16",
+          "question": "Do you have predefined communication channels for workforce personnel and external business partners to report incidents in a timely manner adhering to applicable legal, statutory, or regulatory compliance obligations?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B18",
+          "question": "Do you have technical capabilities to enforce tenant data retention policies?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "B19",
+          "question": "Have you identified your critical assets required for the functioning of your system and implemented backup or recovery mechanisms to ensure compliance with regulatory, statutory, contractual or business requirements?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "B20",
+          "question": "Do you test your backup or redundancy mechanisms at least annually?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.C - Assessing Applistructure and Infostructure | Governance",
+      "questions": [
+        {
+          "id": "C3",
+          "question": "Are all information related to security, contractual and regulatory requirements for customer access are clearly shared, addressed, remediated prior to granting customers access to your SaaS platform?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C4",
+          "question": "Does your data management policies and procedures require audits to verify data input and output integrity routines?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C5",
+          "question": "Do you publish a list of all APIs available in the service and has proper documentation indicating which are standard and which are customized?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "C8",
+          "question": "Do you have procedures in place to ensure production data shall not be replicated or used in non-production environments?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C9",
+          "question": "Do you support the secure deletion (e.g., degaussing/cryptographic wiping) of archived and backed-up data (You can answer yes if your public CSP is responsible for this control and adheres by it)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C10",
+          "question": "Do you have a published procedure in data deletion controls in place after a tenant/ customer exits the service agreement?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.C - Assessing Applistructure and Infostructure | Operations",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "Do you use an automated source code analysis tool to detect security defects in code prior to production?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C2",
+          "question": "Do you review your applications for security vulnerabilities and address any issues prior to deployment to production?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C6",
+          "question": "Do you provide standardized (e.g. ISO/IEC) non-proprietary encryption algorithms (3DES, AES, etc.) to tenants in order for them to protect their data if it is required to move through public networks (e.g., the Internet)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "C7",
+          "question": "Do you utilize open encryption methodologies any time your infrastructure components need to communicate with each other via public networks (e.g., Internet-based replication of data from one environment to another)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.D- Assessing Infrastructure | Governance",
+      "questions": [
+        {
+          "id": "D2",
+          "question": "Is logical user access to audit logs restricted to authorized personnel?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "D7",
+          "question": "Do you restrict personnel access to all administrative consoles for systems hosting cloud virtualized systems based on the principle of least privilege and supported through technical controls (e.g., two-factor authentication, audit trails, IP address filtering, firewalls and TLS-encapsulated communications to the administrative consoles)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.D - Assessing Infrastructure | Operations",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "Are file integrity (host) and network intrusion detection (IDS) tools implemented to help facilitate timely detection, investigation by root cause analysis, and response to incidents?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "D3",
+          "question": "Are audit logs reviewed on a regular basis for security events (e.g., with automated tools)?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "D4",
+          "question": "Are operating systems hardened to provide only the necessary ports, protocols, and services to meet business needs using technical controls (e.g., antivirus, file integrity monitoring, and logging) as part of their baseline build standard or template?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "D5",
+          "question": "For your SaaS offering, do you provide tenants with separate environments for production and test processes?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "D6",
+          "question": "Do you logically segregate production and non-production environments?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        },
+        {
+          "id": "D8",
+          "question": "Do you have anti-malware programs that support or connect to your cloud service offerings installed on all of your IT infrastructure network and systems components?",
+          "possibleAnswers": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "D9",
+          "question": "Do you have a capability to patch vulnerabilities across all of your computing devices, applications, and systems?",
+          "possibleAnswers": [
+            "Yes",
+            "No",
+            "N/A"
+          ]
+        }
+      ]
+    }
   ]
 }

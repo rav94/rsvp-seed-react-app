@@ -12,7 +12,7 @@ export default function TabComponent() {
     }, [])
   return (
     <div className='main-wrapper'>
-      <h1 className='app-name'>Application Title </h1>
+      <h1 className='app-name'>SaaS Cloud System Resources Analyzer</h1>
       <Tabs
         id='controlled-tab-example'
         activeKey={key}
